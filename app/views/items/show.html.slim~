@@ -1,0 +1,14 @@
+table.table.table-striped
+  thead
+    tr
+      th Description
+      th Amount
+      th Date
+  - @charges.each do |charge|
+    tbody
+      td
+        = charge.description
+      td
+        = charge.amount
+      td
+        = charge.created_at

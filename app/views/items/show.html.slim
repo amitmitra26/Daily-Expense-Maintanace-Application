@@ -1,0 +1,31 @@
+section.d-flex.justify-content-between.p-4
+  = link_to "Edit", edit_item_path(@item.id)
+  .
+    span Total Cost:
+    span.ml-2
+      = @total_cost
+
+  .
+    span Invested Cost:
+    span.ml-2
+      = @item.amount
+
+  .
+    span Remaining:
+    span.ml-2
+      = @remaining
+
+table.table.table-striped
+  thead
+    tr
+      th Description
+      th Amount
+      th Date
+  - @charges.each do |charge|
+    tbody
+      td
+        = charge.description
+      td
+        = charge.amount
+      td
+        = charge.created_at

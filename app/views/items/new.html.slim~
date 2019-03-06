@@ -1,0 +1,14 @@
+= link_to("Charges", charges_path, class: "btn btn-primary mr-4")
+
+h1 Add a new Item
+
+= form_for @item, url: {action: "create"} do |f|
+  .form-group.row
+    = f.label :name, value: "Item Name", class: "col-sm-3 offset-sm-2 col-form-label"
+    .col-sm-5
+      = f.text_field :name, class: "form-control", required: true
+
+  .form-group.row
+    .col-sm-3.offset-sm-9
+      = f.submit "Create", class: "btn btn-primary" 
+end

@@ -1,0 +1,40 @@
+= link_to("Charges", charges_path, class: "btn btn-primary mr-4")
+= link_to("Home", items_path, class: "btn btn-primary mr-4")
+
+table.table.table-striped
+  thead
+    tr
+      th No.
+      th Amount
+      th Type
+      th Date
+
+  tbody
+    - @earnings.each do |earning|  
+      tr
+        td
+          = earning.id
+        td 
+          = earning.amount
+        td
+          = earning.desc
+        td
+          = earning.created_at
+
+h1 Add a new Earning
+
+= form_for @earning, url: {action: "create"} do |f|
+  .form-group.row
+    = f.label :amount, value: "Earned Amount", class: "col-sm-3 offset-sm-2 col-form-label"
+    .col-sm-5
+      = f.text_field :amount, class: "form-control", required: true
+
+  .form-group.row
+    = f.label :desc, value: "Type", class: "col-sm-3 offset-sm-2 col-form-label"
+    .col-sm-5
+      = f.text_field :desc, class: "form-control", required: true
+
+  .form-group.row
+    .col-sm-3.offset-sm-9
+      = f.submit "Create", class: "btn btn-primary" 
+end

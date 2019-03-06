@@ -1,0 +1,85 @@
+@import "bootstrap";
+
+.flex-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #ffe8fb;
+  font-size: 24px;
+  padding: 20px 0;
+}
+
+.flex-child {
+  margin: 10px;
+  padding: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 4px solid #0b2e7d;
+  border-radius: 41px;
+  justify-content: center;
+  background: #b9d2f3;
+  font-family: cursive;
+
+  &:hover, &:focus {
+    text-decoration: none;
+    background-color: #CB92AE;
+  }
+}
+
+.flex-child span {
+  margin: 2px;
+}
+
+.navigation {
+  display: inline-flex;
+  justify-content: space-around;	
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.navigation span {
+  font-size: 26px;
+}
+
+span.summary {
+  font-weight: 700;
+  color: #880000;
+  font-size: 36px;
+}
+
+.menu-button-box {
+  width: 400px;
+}
+
+.total-cost-box {
+  width: 600px;
+}
+
+.btn-primary {
+  background-color: #94491d;
+  border-color: #94491d;
+}
+
+section .btn-primary:hover, section .btn.btn-primary:focus, section .btn.btn-primary:active {
+  background-color: #653113 !important;
+  border-color: #653113 !important;
+}
+
+.total-cost {
+  border-left: 1px solid;
+}
+
+.cost {
+  padding-left: 17px;
+}
+
+body {
+      background: rgba(201, 129, 255, 0.5);
+}
+
+.browser-default.custom-select {
+  border: 2px solid #d49ebc;
+  cursor: pointer;
+}

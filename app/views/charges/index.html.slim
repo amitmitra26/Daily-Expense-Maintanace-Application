@@ -1,0 +1,56 @@
+header
+  = link_to("New Pay", new_charge_path, class: "btn btn-primary mr-4") 
+  = link_to("Items", items_path, class: "btn btn-primary mr-4")
+  = link_to("New Item", new_item_path, class: "btn btn-primary") 
+
+header
+  section.navigation
+    div.d-flex.align-items-center
+      span.cost Earnings:
+      span.ml-2.summary
+        = @total_earning
+
+    div.d-flex.align-items-center
+      span.costl Cost:
+      span.ml-2.summary
+        = @cost
+
+    div.d-flex.align-items-center
+      span.cost Savings:
+      span.ml-2.summary
+        = @savings
+
+    div.d-flex.align-items-center
+      span.cost Invest:
+      span.ml-2.summary
+        = @total_invest
+
+    div.d-flex.align-items-center
+      span.cost Extra:
+      span.ml-2.summary
+        = @extra
+
+    div.d-flex.align-items-center
+      span.cost Remaining Invest:
+      span.ml-2.summary
+        = @remaining_invest
+
+table.table.table-striped
+  thead
+    tr
+      th Item
+      th Amount
+      th Description
+      th Date
+
+  tbody
+    - @charges.each do |charge|  
+      tr
+        td
+          = @items[charge.item_id].name
+        td 
+          = charge.amount
+        td
+          = charge.description
+        td
+          = charge.created_at

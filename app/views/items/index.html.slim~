@@ -1,0 +1,30 @@
+header.d-flex.justify-content-around.align-items-center
+  section.navigation.menu-button-box
+    = link_to("Home", items_path, class: "btn btn-primary") 
+    = link_to("New Item", new_item_path, class: "btn btn-primary") 
+    = link_to("Charges", charges_path, class: "btn btn-primary mr-4")
+
+  section.navigation.total-cost-box
+    div.d-flex.align-items-center
+      span Month:      
+      = form_tag({action: "index"}, {method: :get}) do
+        = select_tag "month", options_for_select(@months.collect{ |u| [u[1], u[0]] }, [@months[@month], @month]), onchange: "this.form.submit();", class: "browser-default custom-select ml-3"
+      end
+
+    div.d-flex.align-items-center.total-cost
+      span.cost Total Cost:
+      span.ml-3.summary
+        = @total_cost
+        |  /-
+
+section.flex-box
+  - @item_wise_cost.each do |k, charge|
+    = link_to(item_path(k), class: "flex-child") do 
+      span
+        = charge[0]
+
+      span 
+        | :
+      span
+        = charge[1]
+

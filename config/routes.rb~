@@ -1,0 +1,9 @@
+Rails.application.routes.draw do
+  get 'earnings/new'
+  get 'earnings/create'
+  get 'earnings/show'
+  get 'earnings/index'
+  resources :items, only: [:index, :new, :create, :show, :edit, :update]
+  resources :charges, only: [:index, :new, :create, :show, :destroy]
+  root to: 'items#index'
+end
