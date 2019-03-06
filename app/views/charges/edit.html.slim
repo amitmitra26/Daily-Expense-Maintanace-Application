@@ -1,8 +1,8 @@
 = link_to("Charges", charges_path, class: "btn btn-primary mr-4")
 
-h1 New Amount
+h1 Edit Amount
 
-= form_for @charge, url: {action: "create"} do |f|
+= form_for @charge, url: {action: "update"} do |f|
   .form-group.row
     = f.label :item_id, value: "Item:", class: "col-sm-3 offset-sm-2 col-form-label"
     .col-sm-3
@@ -25,5 +25,5 @@ h1 New Amount
 
   .form-group.row
     .col-sm-3.offset-sm-9
-      = f.submit "Create", class: "btn btn-primary" 
+      = f.submit "Update", class: "btn btn-primary" 
 end

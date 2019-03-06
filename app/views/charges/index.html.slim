@@ -51,6 +51,6 @@ table.table.table-striped
         td 
           = charge.amount
         td
-          = charge.description
+          = link_to charge.description, edit_charge_path(charge.id), class: "link"
         td
-          = charge.created_at
+          = charge.payment_date
