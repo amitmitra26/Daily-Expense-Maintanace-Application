@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_09_033048) do
+ActiveRecord::Schema.define(version: 2019_03_06_102646) do
 
   create_table "charges", force: :cascade do |t|
     t.string "amount"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_12_09_033048) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
+    t.date "payment_date"
     t.index ["item_id"], name: "index_charges_on_item_id"
   end
 

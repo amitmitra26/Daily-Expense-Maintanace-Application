@@ -83,3 +83,12 @@ body {
   border: 2px solid #d49ebc;
   cursor: pointer;
 }
+
+.link {
+  color: #6d1a39;
+  font-weight: 700;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
